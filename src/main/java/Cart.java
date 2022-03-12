@@ -9,11 +9,15 @@ public class Cart {
 
   private List<SKU> skus = new LinkedList<>();
 
-  public Integer calculatePrice(PromotionEngine engine) {
+  public Integer getTotalPrice() {
     Integer totalPrice = 0;
     for (SKU sku : skus) {
       totalPrice += sku.getPrice();
     }
     return totalPrice;
+  }
+
+  public Integer calculatePriceWithPromotion(PromotionEngineInterface engine) {
+    return getTotalPrice() - engine.getPromotion(skus);
   }
 }
