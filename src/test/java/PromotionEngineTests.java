@@ -28,7 +28,7 @@ public class PromotionEngineTests {
     items.add(new SKU(SKUType.C));
 
     //When
-    Integer price = cart.calculatePriceWithPromotion(promotionEngine);
+    Integer price = cart.getTotalPriceWithPromotion(promotionEngine);
 
     //Then
     assertEquals(100, price);
@@ -51,7 +51,7 @@ public class PromotionEngineTests {
     items.add(new SKU(SKUType.C));
 
     //When
-    Integer price = cart.calculatePriceWithPromotion(promotionEngine);
+    Integer price = cart.getTotalPriceWithPromotion(promotionEngine);
 
     //Then
     assertEquals(370, price);
@@ -73,7 +73,7 @@ public class PromotionEngineTests {
     items.add(new SKU(SKUType.D));
 
     //When
-    Integer price = cart.calculatePriceWithPromotion(promotionEngine);
+    Integer price = cart.getTotalPriceWithPromotion(promotionEngine);
 
     //Then
     assertEquals(280, price);
@@ -82,7 +82,7 @@ public class PromotionEngineTests {
   @Test
   void emptyCartScenario() {
     //When
-    Integer price = cart.calculatePriceWithPromotion(promotionEngine);
+    Integer price = cart.getTotalPriceWithPromotion(promotionEngine);
 
     //Then
     assertEquals(0, price);

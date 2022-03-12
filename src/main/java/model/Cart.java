@@ -18,7 +18,7 @@ public class Cart {
     return totalPrice;
   }
 
-  public Integer calculatePriceWithPromotion(PromotionEngineInterface engine) {
+  public Integer getTotalPriceWithPromotion(PromotionEngineInterface engine) {
     return getTotalPrice() - engine.calculateTotalPromotion(skus);
   }
 }
