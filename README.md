@@ -1,7 +1,7 @@
 # promotion-engine
 Instructions
 -----------
-To run the tests, simply clone the repository and run the following command in from the command line:
+To run the tests scenarios, simply clone the repository and run the following command from the command line from the main directory:
 ```
 ./mvnw test
 ```
