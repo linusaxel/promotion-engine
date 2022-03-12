@@ -1,13 +1,14 @@
+package model;
+
 import java.util.LinkedList;
 import java.util.List;
 import lombok.Getter;
-import lombok.Setter;
+import promotion.PromotionEngineInterface;
 
 @Getter
-@Setter
 public class Cart {
 
-  private List<SKU> skus = new LinkedList<>();
+  private final List<SKU> skus = new LinkedList<>();
 
   public Integer getTotalPrice() {
     Integer totalPrice = 0;
@@ -18,6 +19,6 @@ public class Cart {
   }
 
   public Integer calculatePriceWithPromotion(PromotionEngineInterface engine) {
-    return getTotalPrice() - engine.getPromotion(skus);
+    return getTotalPrice() - engine.calculateTotalPromotion(skus);
   }
 }

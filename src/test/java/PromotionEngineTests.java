@@ -1,13 +1,17 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
+import model.Cart;
+import model.SKU;
+import model.SKUType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import promotion.PromotionEngineImpl;
 
 public class PromotionEngineTests {
 
   private Cart cart;
-  PromotionEngineImpl promotionEngine;
+  private PromotionEngineImpl promotionEngine;
 
   @BeforeEach
   void init() {
@@ -73,6 +77,15 @@ public class PromotionEngineTests {
 
     //Then
     assertEquals(280, price);
+  }
+
+  @Test
+  void emptyCartScenario() {
+    //When
+    Integer price = cart.calculatePriceWithPromotion(promotionEngine);
+
+    //Then
+    assertEquals(0, price);
   }
 
 

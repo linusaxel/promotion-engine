@@ -1,17 +1,12 @@
+package promotion;
+
 import java.util.List;
+import model.SKU;
+import model.SKUType;
 
-public class PromotionEngineImpl implements PromotionEngineInterface {
+public class PromotionTypes {
 
-  @Override
-  public Integer getPromotion(List<SKU> skus) {
-    int promotion = 0;
-    promotion += calculateBulkPromotion(skus, SKUType.A, 3, 20);
-    promotion += calculateBulkPromotion(skus, SKUType.B, 2, 15);
-    promotion += calculatePromotionForTwo(skus, SKUType.C, SKUType.D, 5);
-    return promotion;
-  }
-
-  private Integer calculateBulkPromotion(List<SKU> skus, SKUType type, int numOfSKUForPromotion, int promotionValue) {
+  public static Integer calculateBulkPromotion(List<SKU> skus, SKUType type, int numOfSKUForPromotion, int promotionValue) {
     int numOfType = 0;
     for (SKU sku : skus) {
       if (sku.getType().equals(type)) {
@@ -23,7 +18,7 @@ public class PromotionEngineImpl implements PromotionEngineInterface {
     return promotionTimes * promotionValue;
   }
 
-  private Integer calculatePromotionForTwo(List<SKU> skus, SKUType type1, SKUType type2, int promotionValue) {
+  public static Integer calculatePromotionForTwo(List<SKU> skus, SKUType type1, SKUType type2, int promotionValue) {
     int numOfType1 = 0;
     int numOfType2 = 0;
     for (SKU sku : skus) {
