@@ -1,9 +1,10 @@
 package model;
 
+import lombok.Getter;
+import promotion.AbstractPromotionEngine;
+
 import java.util.LinkedList;
 import java.util.List;
-import lombok.Getter;
-import promotion.PromotionEngineInterface;
 
 @Getter
 public class Cart {
@@ -18,7 +19,7 @@ public class Cart {
     return totalPrice;
   }
 
-  public Integer getTotalPriceWithPromotion(PromotionEngineInterface engine) {
+  public Integer getTotalPriceWithPromotion(AbstractPromotionEngine engine) {
     return getTotalPrice() - engine.calculateTotalPromotion(skus);
   }
 }

@@ -1,22 +1,23 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.List;
 import model.Cart;
 import model.SKU;
 import model.SKUType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import promotion.PromotionEngineImpl;
+import promotion.PromotionEngine;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PromotionEngineTests {
 
   private Cart cart;
-  private PromotionEngineImpl promotionEngine;
+  private PromotionEngine promotionEngine;
 
   @BeforeEach
   void init() {
     cart = new Cart();
-    promotionEngine = new PromotionEngineImpl();
+    promotionEngine = new PromotionEngine();
   }
 
   @Test
