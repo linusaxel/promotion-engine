@@ -1,7 +1,10 @@
 # promotion-engine
-Description
+Instructions
 -----------
-A simple promotion engine for a checkout process.
+To run the tests, simply clone the repository and run the following command in from the command line:
+```
+./mvnw test
+```
 
 Problem Statement 1: Promotion Engine
 -----------
